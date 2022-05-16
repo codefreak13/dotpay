@@ -53,13 +53,11 @@ const Home = () => {
     useEffect(() => {
         // fetching data from endpoint
         const fetchData = async () => {
-            const res = await api.getBallotData()
-            let data = res.items
-            setdata(data)
+            const data = await api.getBallotData()
+            setdata(data.items)
         }
         fetchData()
     }, [])
-
 
     const setValues = (id: string, categoryId: string) => {
         // function for selecting from a category
@@ -72,6 +70,7 @@ const Home = () => {
         setModalToggle(!modalToggle)
     }
 
+    const categoryLength = data.length
     return (
         <Wrapper>
             {/* renders categories and items */}
@@ -82,13 +81,13 @@ const Home = () => {
                 showsVerticalScrollIndicator={false}
                 ListFooterComponent={
                     <Button onPress={() => {
-                        if(Object.keys(values).length < 7){
-                            return Alert.alert('Kindly make a selection across all categories')
+                        if(Object.keys(values).length < categoryLength){
+                            return Alert.alert('Kindly make a selection from all categories')
                         }
                         toggleModal()
                     }}>
                         <ButtonText>
-                            SUBMIT VOTE BUTTON
+                            SUBMIT VOTE
                         </ButtonText>
                     </Button>
                 }
@@ -108,7 +107,7 @@ const Home = () => {
                 useNativeDriver={true}>
                 <ModalWrapper>
                     <ButtonText>
-                        YOUR SELECTION
+                       REVIEW YOUR SELECTION
                     </ButtonText>
                     <ModalBody>
                     {Object.entries(values).map(([key, value]) => 

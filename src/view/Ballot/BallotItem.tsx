@@ -3,6 +3,8 @@ import styled from 'styled-components/native'
 import FastImage from 'react-native-fast-image'
 
 export const Text = styled.Text`
+color: #121212;
+font-family: 'Roboto-Black'
 `
 export const View = styled.View``
 
@@ -24,6 +26,9 @@ borderRadius: 5px;
 background-color: #a6b0bc;
 margin-vertical: 13px
 `
+const HiglightedTouchable = styled(Touchable)`
+background-color: #f5f5f5;;
+`
 const DefaultWrapper = styled(View)`
 border-width: 0.2px;
 padding: 5px;
@@ -31,10 +36,11 @@ width: 120px;
 align-items: center;
 margin-vertical: 5px;
 margin-right: 10px;
-border-color: #488adb
+border-color: #488adb;
+background-color: #dae8fc
 `
 const HiglightedWrapper = styled(DefaultWrapper)`
-background-color: #DAE9FC;
+background-color: #d5e8d4;
 `
 const imageStyle = {
     width: 80,
@@ -56,7 +62,7 @@ type ListItemProps = {
 const BallotItem: FC<ListItemProps> = ({ id, photoUrL, title, categoryId, value, setValues }) => {
     // conditionally renders parent container style according to selection
     const Wrapper = value[categoryId as keyof typeof value] === id ? HiglightedWrapper : DefaultWrapper
-
+    const Button = value[categoryId as keyof typeof value] === id ? HiglightedTouchable : Touchable
     return (
         <Wrapper>
             <TitleText>{title}</TitleText>
@@ -67,12 +73,12 @@ const BallotItem: FC<ListItemProps> = ({ id, photoUrL, title, categoryId, value,
                 }}
                 resizeMode={FastImage.resizeMode.cover}
             />
-            <Touchable onPress={() => {
-                //making a selection gets triggered
+            {/* making a selection gets triggered */}
+            <Button onPress={() => {
                 setValues(id, categoryId)
             }}>
                 <ButtonText>Select</ButtonText>
-            </Touchable>
+            </Button>
         </Wrapper>
     )
 };
