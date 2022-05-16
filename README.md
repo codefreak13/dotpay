@@ -37,13 +37,24 @@ To clone the application, copy and paste any of the commands below to your machi
 >```$ git clone git@github.com:codefreak13/dotpay.git```
 ##
 
-### Running The App
+### Installing Node Modules
 After cloning the app, open the app folder with your favourite IDE or code editor and install node modules with the command below
 
 
 >```$ yarn install```
 ##
 
+### Imstalling Pods For Ios
+To run the ios app, the pods have to be installed with the following command
+>```$ yarn pod```
+##
+
+### Running The Server
+You can start the server by running the following command in your IDE
+>```$ yarn backend```
+##
+
+### Running The App
 All is set!
 You can now build the app by running the following command on your IDE terminal
 
@@ -54,6 +65,8 @@ or
 >```$ yarn android```
 
 This command will also spin up the simulator/emulator and run the app
+
+
 
 ## Process Flow
 I built a voting platform that allows a user to select one item from a category and thereafter display the selections. 
