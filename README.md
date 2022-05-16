@@ -56,7 +56,7 @@ You can start the server by running the following command in your IDE
 
 ### Running The App
 All is set!
-You can now build the app by running the following command on your IDE terminal
+You can now build the app by running the following command on your IDE terminal for ios app and android respectively
 
 >```$ yarn ios```
 
