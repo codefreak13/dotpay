@@ -44,7 +44,7 @@ After cloning the app, open the app folder with your favourite IDE or code edito
 >```$ yarn install```
 ##
 
-### Imstalling Pods For Ios
+### Imstalling Pods For IOS
 To run the ios app, the pods have to be installed with the following command
 >```$ yarn pod```
 ##
