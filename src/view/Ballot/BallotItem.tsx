@@ -73,7 +73,7 @@ const BallotItem: FC<ListItemProps> = ({ id, photoUrL, title, categoryId, value,
                 }}
                 resizeMode={FastImage.resizeMode.cover}
             />
-            {/* making a selection gets triggered */}
+            {/* making a selection*/}
             <Button onPress={() => {
                 setValues(id, categoryId)
             }}>

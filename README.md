@@ -1,6 +1,6 @@
-## TEMEDICA DRUG INFORMATION APP
+## VOTING APP
 
-An app that provides users with information on drugs.
+A code challenge implementing a voting app.
 
 ## Overview
 The app was built using React Native and Typescript and the data set used in the app was gotten from he backend.
